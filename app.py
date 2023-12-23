@@ -1,3 +1,4 @@
+from codecarbon import OfflineEmissionsTracker
 class Product:
     def __init__(self, name, id, price):
         self.name = name
@@ -30,6 +31,7 @@ class ShoppingCart:
             print(f"Removed {product.name} from cart")
 
     def calculate_total(self):
+        tracker=OfflineEmissionsTracker(country_iso_code='IND')
         total = 0
         for product in self.products:
             total = total+product.price
@@ -106,4 +108,4 @@ while True:
         break
 
     else:
-        print("Invalid input, Please try again later")
+        print("Invalid input here, Please try again later")
